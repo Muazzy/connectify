@@ -36,15 +36,19 @@ class LoginView extends StatelessWidget {
                 ),
                 SizedBox(height: 100.h),
                 MainButton(
-                  buttonText: '',
+                  fullWidth: false,
+
+                  buttonText: 'Login with phone',
                   onPressed: () {
                     viewModel.onClickLogin(context);
                   },
                   isLoading: false,
+                  width: MediaQuery.of(context).size.width - 48.w,
                   // padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
                   // height: 65.w,
                   borderRadius: BorderRadius.circular(30.r),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         decoration: BoxDecoration(
@@ -60,37 +64,21 @@ class LoginView extends StatelessWidget {
                           size: 20.sp,
                         ),
                       ),
-                      Expanded(
-                        child: Text(
-                          'Login with phone',
-                          textAlign: TextAlign.center,
-                          style: TextStyling.medium
-                              .copyWith(color: AppColors.white),
-                        ),
+                      Text(
+                        'Login with phone',
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyling.medium.copyWith(color: AppColors.white),
                       ),
-                      Visibility(
-                        visible: false,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.white,
-                          ),
-                          padding: EdgeInsets.all(
-                            10.h,
-                          ),
-                          child: Icon(
-                            Icons.phone_outlined,
-                            color: AppColors.primary,
-                            size: 20.sp,
-                          ),
-                        ),
-                      ),
+                      SizedBox(width: 30.w),
                     ],
                   ),
                 ),
                 SizedBox(height: 10.h),
                 MainButton(
-                  buttonText: '',
+                  fullWidth: false,
+                  buttonText: 'Login with google',
+                  width: MediaQuery.of(context).size.width - 48.w,
                   onPressed: () {
                     viewModel.onClickLogin(context);
                   },
@@ -100,6 +88,7 @@ class LoginView extends StatelessWidget {
                   btnColor: AppColors.primary.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(30.r),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         decoration: BoxDecoration(
@@ -115,30 +104,14 @@ class LoginView extends StatelessWidget {
                           size: 20.sp,
                         ),
                       ),
-                      Expanded(
-                        child: Text(
-                          'Login with google',
-                          textAlign: TextAlign.center,
-                          style: TextStyling.medium,
+                      Text(
+                        'Login with google',
+                        textAlign: TextAlign.center,
+                        style: TextStyling.medium.copyWith(
+                          color: AppColors.primary,
                         ),
                       ),
-                      Visibility(
-                        visible: false,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.white,
-                          ),
-                          padding: EdgeInsets.all(
-                            10.h,
-                          ),
-                          child: Icon(
-                            Icons.circle,
-                            color: AppColors.primary,
-                            size: 20.sp,
-                          ),
-                        ),
-                      ),
+                      SizedBox(width: 30.w),
                     ],
                   ),
                 ),
